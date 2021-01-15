@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <title>React App</title>
+    <link href="/static/css/main.10041697.chunk.css" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .context {
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+      }
+
+      .context h1 {
+        text-align: center;
+        color: #fff;
+        font-size: 50px;
+      }
+
+      body {
+        background: #4e54c8 repeat-y;
+        background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+        width: 100%;
+        min-height: 100% !important;
+      }
+
+      .circles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .circles li {
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        animation: animate 25s linear infinite;
+        bottom: -150px;
+      }
+
+      .circles li:nth-child(1) {
+        left: 25%;
+        width: 80px;
+        height: 80px;
+        animation-delay: 0s;
+      }
+
+      .circles li:nth-child(2) {
+        left: 10%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 2s;
+        animation-duration: 12s;
+      }
+
+      .circles li:nth-child(3) {
+        left: 70%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 4s;
+      }
+
+      .circles li:nth-child(4) {
+        left: 40%;
+        width: 60px;
+        height: 60px;
+        animation-delay: 0s;
+        animation-duration: 18s;
+      }
+
+      .circles li:nth-child(5) {
+        left: 65%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 0s;
+      }
+
+      .circles li:nth-child(6) {
+        left: 75%;
+        width: 110px;
+        height: 110px;
+        animation-delay: 3s;
+      }
+
+      .circles li:nth-child(7) {
+        left: 35%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 7s;
+      }
+
+      .circles li:nth-child(8) {
+        left: 50%;
+        width: 25px;
+        height: 25px;
+        animation-delay: 15s;
+        animation-duration: 45s;
+      }
+
+      .circles li:nth-child(9) {
+        left: 20%;
+        width: 15px;
+        height: 15px;
+        animation-delay: 2s;
+        animation-duration: 35s;
+      }
+
+      .circles li:nth-child(10) {
+        left: 85%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 0s;
+        animation-duration: 11s;
+      }
+
+      @keyframes animate {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 1;
+          border-radius: 0;
+        }
+
+        100% {
+          transform: translateY(-1000px) rotate(720deg);
+          opacity: 0;
+          border-radius: 50%;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 12px;
+      }
+
+      body {
+        /* margin: 20px 0; */
+
+        padding: 0;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        overflow: scroll;
+        overflow-x: hidden;
+        color: white !important;
+      }
+
+      button {
+        background-color: #000000 !important;
+        border: 2px solid #000000 !important;
+        color: #ffffff !important;
+        transition: all 0.25s linear !important;
+        cursor: pointer;
+      }
+
+      button::after {
+        position: relative !important;
+        right: 0 !important;
+        content: ' \276f' !important;
+        transition: all 0.15s linear !important;
+      }
+
+      button:hover {
+        background-color: #707070 !important;
+        border-color: #807f7f !important;
+        color: rgb(0, 0, 0);
+      }
+
+      button:hover::after {
+        right: -5px !important;
+        background-color: #707070 !important;
+      }
+
+      button:focus {
+        outline: none !important;
+      }
+
+      ul {
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style-type: none !important;
+      }
+
+      input {
+        transition: all 0.25s linear !important;
+      }
+
+      input[type='number']::-webkit-inner-spin-button,
+      input[type='number']::-webkit-outer-spin-button {
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        appearance: none !important;
+        margin: 0 !important;
+      }
+
+      input {
+        outline: none !important;
+      }
+
+      .container {
+        width: 90% !important;
+        margin: 0 auto !important;
+        overflow: auto !important;
+      }
+
+      /* --- HEADER --- */
+      header.container {
+        margin-bottom: 1.5rem !important;
+      }
+
+      header .breadcrumb {
+        color: #7d7d7d !important;
+      }
+
+      header .breadcrumb li {
+        float: left !important;
+        padding: 0 6px !important;
+      }
+
+      header .breadcrumb li:first-child {
+        padding-left: 2px !important;
+      }
+
+      header .breadcrumb li:not(:last-child)::after {
+        content: ' \276f' !important;
+        padding-left: 8px !important;
+      }
+
+      header .count {
+        float: right !important;
+        color: #333333 !important;
+      }
+
+      /* --- PRODUCT LIST --- */
+
+      .row {
+        position: relative !important;
+        overflow: auto !important;
+        width: 100% !important;
+      }
+
+      .col,
+      .quantity,
+      .remove {
+        float: left !important;
+      }
+
+      .col.left {
+        width: 70% !important;
+      }
+
+      .col.right {
+        width: 30% !important;
+        position: absolute !important;
+        right: -40% !important;
+        top: calc(50% - 30px) !important;
+      }
+
+      .detail {
+        padding: 0 0.5rem !important;
+        line-height: 2.2rem !important;
+      }
+
+      .detail .name {
+        font-size: 1.2rem !important;
+      }
+
+      .detail .description {
+        color: #7d7d7d;
+        font-size: 1rem !important;
+      }
+
+      .detail .price {
+        font-size: 1.5rem !important;
+      }
+
+      .quantity,
+      .remove {
+        width: 50% !important;
+        text-align: center !important;
+      }
+
+      .remove svg {
+        width: 60px !important;
+        height: 60px !important;
+      }
+
+      .quantity > input {
+        display: inline-block !important;
+        width: 60px !important;
+        height: 60px !important;
+        position: relative !important;
+        left: calc(50% - 30px) !important;
+        background: #fff !important;
+        border: 2px solid rgb(0, 0, 0) !important;
+        color: #7f7f7f !important;
+        text-align: center !important;
+        font: 600 1.5rem Helvetica, Arial, sans-serif !important;
+      }
+
+      .quantity > input:hover,
+      .quantity > input:focus {
+        border-color: #ffffff !important;
+      }
+
+      .close {
+        fill: #7d7d7d !important;
+        transition: color 150ms linear, background-color 150ms linear,
+          fill 150ms linear, 150ms opacity linear !important;
+        cursor: pointer !important;
+      }
+
+      .close:hover {
+        fill: #ffffff !important;
+      }
+
+      /* --- SUMMARY --- */
+      .promotion,
+      .summary,
+      .checkout {
+        float: left !important;
+        width: 100% !important;
+        margin-top: 1.5rem !important;
+      }
+
+      .promotion > label {
+        float: left !important;
+        width: 100% !important;
+        margin-bottom: 1rem !important;
+      }
+
+      .promotion > input {
+        float: left !important;
+        width: 80% !important;
+        font-size: 1rem !important;
+        padding: 0.5rem 0 0.5rem 1.8rem !important;
+        border: 2px solid #000000 !important;
+        border-radius: 2rem 0 0 2rem !important;
+      }
+
+      .promotion:hover > input {
+        border-color: #ffffff !important;
+      }
+
+      .promotion > button {
+        float: left !important;
+        width: 20% !important;
+        padding: 0.5rem 0 !important;
+        border-radius: 0 2rem 2rem 0 !important;
+      }
+
+      .promotion:hover > button {
+        border-color: #727272 !important;
+        background-color: #707070 !important;
+      }
+
+      .promotion > button::after {
+        content: '\276f' !important;
+        font-size: 1rem !important;
+      }
+
+      .summary {
+        font-size: 1.2rem !important;
+        text-align: right !important;
+      }
+
+      .summary ul li {
+        padding: 0.5rem 0 !important;
+      }
+
+      .summary ul li span {
+        display: inline-block !important;
+        width: 30% !important;
+      }
+
+      .summary ul li.total {
+        font-weight: bold !important;
+      }
+
+      .checkout {
+        text-align: right !important;
+      }
+
+      .checkout > button {
+        font-size: 1.2rem !important;
+        padding: 0.8rem 2.8rem !important;
+        border-radius: 1.5rem !important;
+      }
+
+      .empty-product {
+        text-align: center !important;
+      }
+
+      .empty-product > button {
+        font-size: 1.3rem !important;
+        padding: 10px 30px !important;
+        border-radius: 5px !important;
+      }
+
+      /* --- SMALL SCREEN --- */
+      @media all and (max-width: 599px) {
+        .thumbnail img {
+          display: none !important;
+        }
+
+        .quantity > input {
+          width: 40px !important;
+          height: 40px !important;
+          left: calc(50% - 20px) !important;
+        }
+
+        .remove svg {
+          width: 40px !important;
+          height: 40px !important;
+        }
+      }
+
+      /* --- MEDIUM & LARGE SCREEN --- */
+      @media all and (min-width: 600px) {
+        html {
+          font-size: 14px !important;
+        }
+
+        .container {
+          width: 75% !important;
+          max-width: 960px !important;
+        }
+
+        .thumbnail,
+        .detail {
+          float: left !important;
+        }
+
+        .thumbnail {
+          width: 35% !important;
+        }
+
+        .detail {
+          width: 65% !important;
+        }
+
+        .promotion,
+        .summary {
+          width: 50% !important;
+        }
+
+        .checkout {
+          width: 100% !important;
+        }
+
+        .checkout,
+        .summary {
+          text-align: right !important;
+        }
+      }
+
+      /* --- LARGE SCREEN --- */
+      @media all and (min-width: 992px) {
+        html {
+          font-size: 16px !important;
+        }
+      }
+      form {
+        min-width: 98% !important;
+        position: static;
+      }
+
+      .products {
+        margin-left: 10px !important;
+        max-height: 10% !important;
+      }
+      .description {
+        color: #000000 !important;
+      }
+
+      .card {
+        box-shadow: 5px 5px 15px #00000049, -5px -5px 15px #00000049 !important;
+        border-radius: 10px !important;
+        color: #000000 !important;
+        background-color: #ffffffaf !important;
+        min-height: 200px !important;
+        min-width: 100% !important;
+        transition: all 0.15s linear !important;
+        border: 1px solid #000000;
+        cursor: pointer;
+      }
+      .card:hover {
+        background-color: #ffffff !important;
+      }
+
+      .suggestion-button {
+        /* all: unset; */
+
+        margin-top: 5px;
+        margin-right: 10px !important;
+      }
+
+      .header {
+        position: sticky !important;
+      }
+
+      .blog-title {
+        text-shadow: 5px 5px 15px #00000049, -5px -5px 15px #00000049 !important;
+        font-weight: 600;
+        font-size: 36px;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script>
+      !(function (e) {
+        function t(t) {
+          for (
+            var n, i, a = t[0], c = t[1], f = t[2], s = 0, p = [];
+            s < a.length;
+            s++
+          )
+            (i = a[s]),
+              Object.prototype.hasOwnProperty.call(o, i) &&
+                o[i] &&
+                p.push(o[i][0]),
+              (o[i] = 0);
+          for (n in c)
+            Object.prototype.hasOwnProperty.call(c, n) && (e[n] = c[n]);
+          for (l && l(t); p.length; ) p.shift()();
+          return u.push.apply(u, f || []), r();
+        }
+        function r() {
+          for (var e, t = 0; t < u.length; t++) {
+            for (var r = u[t], n = !0, a = 1; a < r.length; a++) {
+              var c = r[a];
+              0 !== o[c] && (n = !1);
+            }
+            n && (u.splice(t--, 1), (e = i((i.s = r[0]))));
+          }
+          return e;
+        }
+        var n = {},
+          o = { 1: 0 },
+          u = [];
+        function i(t) {
+          if (n[t]) return n[t].exports;
+          var r = (n[t] = { i: t, l: !1, exports: {} });
+          return e[t].call(r.exports, r, r.exports, i), (r.l = !0), r.exports;
+        }
+        (i.e = function (e) {
+          var t = [],
+            r = o[e];
+          if (0 !== r)
+            if (r) t.push(r[2]);
+            else {
+              var n = new Promise(function (t, n) {
+                r = o[e] = [t, n];
+              });
+              t.push((r[2] = n));
+              var u,
+                a = document.createElement('script');
+              (a.charset = 'utf-8'),
+                (a.timeout = 120),
+                i.nc && a.setAttribute('nonce', i.nc),
+                (a.src = (function (e) {
+                  return (
+                    i.p +
+                    'static/js/' +
+                    ({}[e] || e) +
+                    '.' +
+                    { 3: 'f6d09813' }[e] +
+                    '.chunk.js'
+                  );
+                })(e));
+              var c = new Error();
+              u = function (t) {
+                (a.onerror = a.onload = null), clearTimeout(f);
+                var r = o[e];
+                if (0 !== r) {
+                  if (r) {
+                    var n = t && ('load' === t.type ? 'missing' : t.type),
+                      u = t && t.target && t.target.src;
+                    (c.message =
+                      'Loading chunk ' +
+                      e +
+                      ' failed.\n(' +
+                      n +
+                      ': ' +
+                      u +
+                      ')'),
+                      (c.name = 'ChunkLoadError'),
+                      (c.type = n),
+                      (c.request = u),
+                      r[1](c);
+                  }
+                  o[e] = void 0;
+                }
+              };
+              var f = setTimeout(function () {
+                u({ type: 'timeout', target: a });
+              }, 12e4);
+              (a.onerror = a.onload = u), document.head.appendChild(a);
+            }
+          return Promise.all(t);
+        }),
+          (i.m = e),
+          (i.c = n),
+          (i.d = function (e, t, r) {
+            i.o(e, t) ||
+              Object.defineProperty(e, t, { enumerable: !0, get: r });
+          }),
+          (i.r = function (e) {
+            'undefined' != typeof Symbol &&
+              Symbol.toStringTag &&
+              Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
+              Object.defineProperty(e, '__esModule', { value: !0 });
+          }),
+          (i.t = function (e, t) {
+            if ((1 & t && (e = i(e)), 8 & t)) return e;
+            if (4 & t && 'object' == typeof e && e && e.__esModule) return e;
+            var r = Object.create(null);
+            if (
+              (i.r(r),
+              Object.defineProperty(r, 'default', { enumerable: !0, value: e }),
+              2 & t && 'string' != typeof e)
+            )
+              for (var n in e)
+                i.d(
+                  r,
+                  n,
+                  function (t) {
+                    return e[t];
+                  }.bind(null, n)
+                );
+            return r;
+          }),
+          (i.n = function (e) {
+            var t =
+              e && e.__esModule
+                ? function () {
+                    return e.default;
+                  }
+                : function () {
+                    return e;
+                  };
+            return i.d(t, 'a', t), t;
+          }),
+          (i.o = function (e, t) {
+            return Object.prototype.hasOwnProperty.call(e, t);
+          }),
+          (i.p = '/'),
+          (i.oe = function (e) {
+            throw (console.error(e), e);
+          });
+        var a = (this['webpackJsonpgocomet-frontend'] =
+            this['webpackJsonpgocomet-frontend'] || []),
+          c = a.push.bind(a);
+        (a.push = t), (a = a.slice());
+        for (var f = 0; f < a.length; f++) t(a[f]);
+        var l = c;
+        r();
+      })([]);
+    </script>
+    <script src="/static/js/2.83bd580b.chunk.js"></script>
+    <script src="/static/js/main.b52747c2.chunk.js"></script>
+  </body>
+</html>
