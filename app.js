@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(nocache());
 app.use(cors({ origin: '*' }));
 
-app.use('/', express.static('./public/'));
+app.use('/', express.static('./view/'));
 app.use('/api/v1/medium', blogRouter);
 
 module.exports = app;
